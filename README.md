@@ -52,6 +52,7 @@ slug('string', [{options} || 'replacement']);
 
 ### All options
 
+```javascript
 slug('string', {
 	'replacement':  '-',              // Replace spaces with replacement
 	'symbols':      true,             // Replace unicode symbols or not
@@ -62,7 +63,7 @@ slug('string', {
 	'save':         ['*', 'ð'],       // Do not replace these characters, also takes a string
 	'wordLimit':    5                 // Limits the amount of words to this number
 });
-
+```
 
 ### Option modes
 
