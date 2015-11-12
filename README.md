@@ -45,7 +45,7 @@ print(slug('i <3 unicode'))
 // > i-love-unicode
 ```
 
-## options
+## Options
 
 ```javascript
 // options is either object or replacement (sets options.replacement)
@@ -55,20 +55,23 @@ slug('string', [{options} || 'replacement']);
 ```javascript
 slug.defaults.mode ='pretty';
 slug.defaults.modes['rfc3986'] = {
-    replacement: '-',      // replace spaces with replacement
-    symbols: true,         // replace unicode symbols or not
-    remove: null,          // (optional) regex to remove characters
-    lower: true,           // result in lower case
-    charmap: slug.charmap, // replace special characters
-    multicharmap: slug.multicharmap // replace multi-characters
+	'replacement':  '-',              // replace spaces with replacement
+	'symbols':      true,             // replace unicode symbols or not
+	'remove':       null,             // (optional) regex to remove characters
+	'lower':        true,             // result in lower case
+	'charmap':      slug.charmap,     // replace special characters
+	'multicharmap': slug.multicharmap // replace multi-characters
 };
 slug.defaults.modes['pretty'] = {
-    replacement: '-',
-    symbols: true,
-    remove: /[.]/g,
-    lower: false,
-    charmap: slug.charmap,
-    multicharmap: slug.multicharmap
+	'replacement':  '-',
+	'symbols':      true,
+	'remove':       /[.]/g,
+	'lower':        false,
+	'charmap':      slug.charmap,
+	'multicharmap': slug.multicharmap
+};
+slug.defaults.modes['saveSlashesAndDots'] = {
+	'save': ['/', '.']
 };
 ```
 
@@ -79,8 +82,3 @@ When using browserify you might want to remove the symbols table from your bundl
 # generates a standalone slug browser bundle:
 browserify slug.js --ignore unicode/category/So -s slug > slug-browser.js
 ```
-
-[![Build Status](https://secure.travis-ci.org/dodo/node-slug.png)](http://travis-ci.org/dodo/node-slug)
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dodo/node-slug/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
