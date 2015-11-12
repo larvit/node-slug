@@ -1,11 +1,14 @@
 {
 	"name":        "larvitslugify",
 	"description": "Slugifies even utf-8 chars!",
-	"version":     "0.10.0",
+	"version":     "0.10.1",
 	"homepage":    "https://github.com/larvit/larvitslugify",
 	"author":      "Lilleman <lilleman@larvit.se>",
 	"contributors": [{
-		"name": "dodo (https://github.com/dodo)"
+		"name": "dodo (https://github.com/dodo)",
+		"name": "atduarte (https://github.com/atduarte",
+		"name": "jesusbotella (https://github.com/jesusbotella",
+		"name": "pdehaan (https://github.com/pdehaan"
 	}],
 	"repository": {
 		"type": "git",
