@@ -20,7 +20,7 @@ npm install larvitslugify
 ## Examples
 
 ```javascript
-var slug  = require('slug'),
+var slug  = require('larvitslugify'),
     print = console.log.bind(console, '>')
 
 print(slug('i ♥ unicode'))
