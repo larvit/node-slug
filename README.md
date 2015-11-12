@@ -1,6 +1,8 @@
-# [slug](https://github.com/dodo/node-slug)
+# [larvitslugify](https://github.com/larvit/larvitslugify)
 
-slugifies every string, even when it contains unicode!
+Forked from [slug](https://github.com/dodo/node-slug) and added some pull requests and options.
+
+Slugifies every string, even when it contains unicode!
 
 Make strings url-safe.
 
@@ -19,11 +21,11 @@ npm install slug
 bower install slug
 ```
 
-## example
+## Examples
 
 ```javascript
-var slug = require('slug')
-var print = console.log.bind(console, '>')
+var slug  = require('slug'),
+    print = console.log.bind(console, '>')
 
 print(slug('i ♥ unicode'))
 // > i-love-unicode
@@ -48,19 +50,34 @@ print(slug('i <3 unicode'))
 ## Options
 
 ```javascript
-// options is either object or replacement (sets options.replacement)
+// Options is either object or replacement (sets options.replacement)
 slug('string', [{options} || 'replacement']);
 ```
+
+### All options
+
+slug('string', {
+	'replacement':  '-',              // Replace spaces with replacement
+	'symbols':      true,             // Replace unicode symbols or not
+	'remove':       /[d]/g,           // Regex to remove characters
+	'lower':        true,             // Result in lower case
+	'charmap':      {'Ä': 'ae'},      // Replace special characters
+	'multicharmap': {'ð': 'oi'},      // Replace multi-characters
+	'save':         ['*', 'ð']        // Do not replace these characters, also takes a string
+});
+
+
+### Option modes
 
 ```javascript
 slug.defaults.mode ='pretty';
 slug.defaults.modes['rfc3986'] = {
-	'replacement':  '-',              // replace spaces with replacement
-	'symbols':      true,             // replace unicode symbols or not
-	'remove':       null,             // (optional) regex to remove characters
-	'lower':        true,             // result in lower case
-	'charmap':      slug.charmap,     // replace special characters
-	'multicharmap': slug.multicharmap // replace multi-characters
+	'replacement':  '-',
+	'symbols':      true,
+	'remove':       null,
+	'lower':        true,
+	'charmap':      slug.charmap,
+	'multicharmap': slug.multicharmap
 };
 slug.defaults.modes['pretty'] = {
 	'replacement':  '-',
@@ -70,15 +87,14 @@ slug.defaults.modes['pretty'] = {
 	'charmap':      slug.charmap,
 	'multicharmap': slug.multicharmap
 };
-slug.defaults.modes['saveSlashesAndDots'] = {
-	'save': ['/', '.']
-};
 ```
 
-## browser
+## Browser
 
 When using browserify you might want to remove the symbols table from your bundle by using `--ignore` similar to this:
 ```bash
-# generates a standalone slug browser bundle:
+
+# Generates a standalone slug browser bundle:
+
 browserify slug.js --ignore unicode/category/So -s slug > slug-browser.js
 ```
