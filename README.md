@@ -14,11 +14,7 @@ Make strings url-safe.
 - Works in browser (window.slug) and AMD/CommonJS-flavoured module loaders (except the unicode symbols unless you use browserify but who wants to download a ~2mb js file, right?)
 
 ```
-npm install slug
-```
-
-```
-bower install slug
+npm install larvitslugify
 ```
 
 ## Examples
@@ -94,8 +90,6 @@ slug.defaults.modes['pretty'] = {
 
 When using browserify you might want to remove the symbols table from your bundle by using `--ignore` similar to this:
 ```bash
-
 # Generates a standalone slug browser bundle:
-
 browserify slug.js --ignore unicode/category/So -s slug > slug-browser.js
 ```
