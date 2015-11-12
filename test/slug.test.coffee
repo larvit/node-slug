@@ -236,5 +236,14 @@ describe 'slug', ->
     it 'should allow to limit slug words (5, i.e.)', ->
       text = "It's Your Journey We Guide You Through."
       expected = "Its-Your-Journey-We-Guide"
-      [slug text, limit:5].should.eql [expected]
+      [slug text, wordLimit:5].should.eql [expected]
 
+    it 'should save some character', ->
+      text = "It's Your Jöurney We Guide You Through."
+      expected = "Its-Your-Jöurney-We-Guide-You-Through"
+      [slug text, save:'ö'].should.eql [expected]
+
+    it 'should save some characters', ->
+      text = "It's Your/Journey We Guide You Through €."
+      expected = "Its-Your/Journey-We-Guide-You-Through-€"
+      [slug text, save:['/', '€']].should.eql [expected]

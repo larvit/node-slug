@@ -59,7 +59,12 @@
 				lengths.push(key.length);
 		}
 
+		if (opts.save && ! (opts.save instanceof Array))
+			opts.save = [opts.save];
+
 		result = '';
+
+		// Iterate through all characters in the string
 		for (char, i = 0, l = string.length; i < l; i ++) {
 			char = string[i];
 
@@ -74,7 +79,7 @@
 				} else {
 					return false;
 				}
-			})) {
+			}) && ( ! opts.save || opts.save.indexOf(char) === - 1)) {
 				if (opts.charmap[char]) {
 					char = opts.charmap[char];
 					code = char.charCodeAt(0);
@@ -91,7 +96,10 @@
 				}
 			}
 
-			char = char.replace(/[^\w\s\-\.\_~]/g, ''); // Allowed
+			// Allowed
+			if ( ! opts.save || (opts.save && opts.save.indexOf(char) === - 1)) {
+				char = char.replace(/[^\w\s\-\.\_~]/g, '');
+			}
 
 			if (opts.remove)
 				char = char.replace(opts.remove, ''); // Add flavour
@@ -101,16 +109,18 @@
 
 		result = result.replace(/^\s+|\s+$/g, ''); // Trim leading/trailing spaces
 
-		if (opts.limit) {
+		if (opts.wordLimit) {
 			splitArray = result.split(' ');
-			splitArray.splice(opts.limit, splitArray.length - opts.limit);
+			splitArray.splice(opts.wordLimit, splitArray.length - opts.wordLimit);
 			result = splitArray.join(' ');
 		}
 
-		result = result.replace(/[-\s]+/g, opts.replacement); // convert spaces
-		result = result.replace(opts.replacement + '$', ''); // remove trailing separator
+		result = result.replace(/[-\s]+/g, opts.replacement); // Convert spaces
+		result = result.replace(opts.replacement + '$', ''); // Remove trailing separator
+
 		if (opts.lower)
 			result = result.toLowerCase();
+
 		return result;
 	 };
 

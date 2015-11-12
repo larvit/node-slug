@@ -63,7 +63,8 @@ slug('string', {
 	'lower':        true,             // Result in lower case
 	'charmap':      {'Ä': 'ae'},      // Replace special characters
 	'multicharmap': {'ð': 'oi'},      // Replace multi-characters
-	'save':         ['*', 'ð']        // Do not replace these characters, also takes a string
+	'save':         ['*', 'ð'],       // Do not replace these characters, also takes a string
+	'wordLimit':    5                 // Limits the amount of words to this number
 });
 
 
