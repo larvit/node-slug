@@ -94,3 +94,11 @@ When using browserify you might want to remove the symbols table from your bundl
 # Generates a standalone slug browser bundle:
 browserify slug.js --ignore unicode/category/So -s slug > slug-browser.js
 ```
+
+When using webpack you can use:
+```javascript
+externals: {
+    'unicode/category/So': '{}',
+}
+```
+In your webpack config to replace the require with an empty object stub.
