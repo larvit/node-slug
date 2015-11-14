@@ -97,11 +97,10 @@
 			}
 
 			// Allowed
-			if ( ! opts.save || (opts.save && opts.save.indexOf(char) === - 1)) {
+			if ( ! opts.save || (opts.save && opts.save.indexOf(char) === - 1))
 				char = char.replace(/[^\w\s\-\.\_~]/g, '');
-			}
 
-			if (opts.remove)
+			if (opts.remove && ( ! opts.save || opts.save.indexOf(char) === - 1))
 				char = char.replace(opts.remove, ''); // Add flavour
 
 			result += char;

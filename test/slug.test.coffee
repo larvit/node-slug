@@ -243,6 +243,11 @@ describe 'slug', ->
       expected = "Its-Your-Jöurney-We-Guide-You-Through"
       [slug text, save:'ö'].should.eql [expected]
 
+    it 'should save the dot character', ->
+      text = "It's Your Journey We Guide You Through."
+      expected = "Its-Your-Journey-We-Guide-You-Through."
+      [slug text, save:'.'].should.eql [expected]
+
     it 'should save some characters', ->
       text = "It's Your/Journey We Guide You Through €."
       expected = "Its-Your/Journey-We-Guide-You-Through-€"
