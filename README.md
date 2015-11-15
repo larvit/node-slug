@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/larvit/larvitslugify.svg?branch=master)](https://travis-ci.org/larvit/larvitslugify)
+
 # [larvitslugify](https://github.com/larvit/larvitslugify)
 
 Forked from [slug](https://github.com/dodo/node-slug) and added some pull requests and options.
