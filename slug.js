@@ -33,7 +33,14 @@
 		    l,
 		    j;
 
-		string = string.toString();
+		try {
+			string = string.toString();
+		} catch (err) {
+			return false;
+		}
+
+		if (typeof string !== 'string')
+			return false;
 
 		if ('string' === typeof opts)
 			opts = {replacement:opts};

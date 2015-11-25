@@ -1,7 +1,7 @@
 {
 	"name":        "larvitslugify",
 	"description": "Slugifies even utf-8 chars!",
-	"version":     "0.10.5",
+	"version":     "0.10.6",
 	"homepage":    "https://github.com/larvit/larvitslugify",
 	"author":      "Lilleman <lilleman@larvit.se>",
 	"contributors": [{
@@ -25,15 +25,14 @@
 		"url"
 	],
 	"scripts": {
-		"test": "mocha test/slug.test.coffee --require should --reporter spec --colors --compilers coffee:coffee-script/register"
+		"test": "mocha"
 	},
 	"dependencies": {
 		"unicode": "latest"
 	},
 	"devDependencies": {
 		"mocha": "latest",
-		"should": "latest",
-		"coffee-script": "latest"
+		"should": "latest"
 	},
 	"bin": {
 		"slug": "bin/slug.js"
