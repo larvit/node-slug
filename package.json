@@ -1,7 +1,7 @@
 {
 	"name":        "larvitslugify",
 	"description": "Slugifies even utf-8 chars!",
-	"version":     "0.10.6",
+	"version":     "0.10.7",
 	"homepage":    "https://github.com/larvit/larvitslugify",
 	"author":      "Lilleman <lilleman@larvit.se>",
 	"contributors": [{
@@ -28,7 +28,7 @@
 		"test": "mocha"
 	},
 	"dependencies": {
-		"unicode": "latest"
+		"unicode": "~0.6"
 	},
 	"devDependencies": {
 		"mocha": "latest",
