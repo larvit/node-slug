@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/larvit/larvitslugify.svg?branch=master)](https://travis-ci.org/larvit/larvitslugify)
+[![Build Status](https://travis-ci.org/larvit/larvitslugify.svg?branch=master)](https://travis-ci.org/larvit/larvitslugify) [![Dependencies](https://david-dm.org/larvit/larvitslugify.svg)](https://david-dm.org/larvit/larvitslugify.svg)
 
 # [larvitslugify](https://github.com/larvit/larvitslugify)
 
