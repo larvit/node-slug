@@ -1,41 +1,40 @@
 {
-	"name":        "larvitslugify",
-	"description": "Slugifies even utf-8 chars!",
-	"version":     "0.10.7",
-	"homepage":    "https://github.com/larvit/larvitslugify",
-	"author":      "Lilleman <lilleman@larvit.se>",
-	"contributors": [{
-		"name": "dodo (https://github.com/dodo)",
-		"name": "atduarte (https://github.com/atduarte",
-		"name": "jesusbotella (https://github.com/jesusbotella",
-		"name": "pdehaan (https://github.com/pdehaan"
-	}],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/larvit/larvitslugify.git"
-	},
-	"main": "slug.js",
-	"keywords": [
-		"slugify",
-		"slug",
-		"string",
-		"utf8",
-		"utf-8",
-		"unicode",
-		"url"
-	],
-	"scripts": {
-		"test": "mocha"
-	},
-	"dependencies": {
-		"unicode": "~0.6"
-	},
-	"devDependencies": {
-		"mocha": "latest",
-		"should": "latest"
-	},
-	"bin": {
-		"slug": "bin/slug.js"
-	},
-	"license": "MIT"
+  "name": "larvitslugify",
+  "description": "Slugifies even utf-8 chars!",
+  "version": "0.10.8",
+  "homepage": "https://github.com/larvit/larvitslugify",
+  "author": "Lilleman <lilleman@larvit.se>",
+  "contributors": [
+    {
+      "name": "pdehaan (https://github.com/pdehaan"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/larvit/larvitslugify.git"
+  },
+  "main": "slug.js",
+  "keywords": [
+    "slugify",
+    "slug",
+    "string",
+    "utf8",
+    "utf-8",
+    "unicode",
+    "url"
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "unicode": "^0.6.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.2",
+    "should": "^8.2.1"
+  },
+  "bin": {
+    "slug": "bin/slug.js"
+  },
+  "license": "MIT"
 }
