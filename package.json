@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git://github.com/larvit/larvitslugify.git"
   },
+  "bugs": {
+    "url": "https://github.com/larvit/larvitslugify/issues"
+  },
   "main": "slug.js",
   "keywords": [
     "slugify",
