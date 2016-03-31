@@ -13,7 +13,7 @@ Make strings url-safe.
 - No dependencies (except the unicode table)
 - Not in coffee-script
 - Coerces foreign symbols to their english equivalent
-- Works in browser (window.slug) and AMD/CommonJS-flavoured module loaders (except the unicode symbols unless you use browserify but who wants to download a ~2mb js file, right?)
+- Works in browser (window.slug) and AMD/CommonJS-flavoured module loaders (except the unicode symbols unless you use browserify but who wants to download a ~2MB js file, right?)
 
 ```
 npm install larvitslugify
