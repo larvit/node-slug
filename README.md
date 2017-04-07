@@ -1,8 +1,10 @@
-[![Build Status](https://travis-ci.org/larvit/larvitslugify.svg?branch=master)](https://travis-ci.org/larvit/larvitslugify) [![Dependencies](https://david-dm.org/larvit/larvitslugify.svg)](https://david-dm.org/larvit/larvitslugify.svg)
+[![Build Status](https://travis-ci.org/larvit/larvitslugify.svg?branch=master)](https://travis-ci.org/larvit/larvitslugify)
 
 # [larvitslugify](https://github.com/larvit/larvitslugify)
 
 Make strings url-safe.
+
+Vanilla javascript, no production dependencies.
 
 Why not use slug? Or slugify? Well, I built this because I wanted a more transparent and powerfull implementation. If I wanted to preserve "/" and change "." to ":" I want to be able to do that, but still have the comfort of everything else being a default slugifier.
 
