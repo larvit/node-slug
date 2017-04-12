@@ -48,6 +48,7 @@ slug('string', {
 	'trim':	= true,	// Run trim() on the string
 	'unidentifiedReplaceChar':	= '',	// If unidentified characters are found they are replaced with this string
 	'whitespaces':	= [' ', '\t', '\xa0']	// A list of characters identified as whitespaces
+	'save':	= undefined	// Adds a character to the charmap to "save" from being changed or removed. Takes a string of one character or an array of single caracter strings
 
 	//'wordLimit':	5	// Limits the amount of words to this number (Currently not supported)
 });

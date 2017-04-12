@@ -28,6 +28,17 @@ exports = module.exports = function slugify(str, options) {
 		str = str.trim();
 	}
 
+	// Shorthand for saving characters
+	if (options.save) {
+		if ( ! Array.isArray(options.save)) {
+			options.save = [options.save];
+		}
+
+		for (let i = 0; options.save[i] !== undefined; i ++) {
+			charmap[options.save[i]] = options.save[i];
+		}
+	}
+
 	// Set whitespace characters that is no in the charmap
 	// We do this since we'd like to handle explicit whitecharacters separately
 	// from the charmap further down

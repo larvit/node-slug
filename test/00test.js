@@ -380,6 +380,22 @@ describe('slug', function () {
 		done();
 	});
 
+	it('should save some character method 2', function (done) {
+		const	text	= 'It\'s Your Jöurney We Guide You Through!',
+			expected	= 'Its-Your-Jöurney-We-Guide-You-Through';
+
+		assert.strictEqual(slug(text, {'save': 'ö'}), expected);
+		done();
+	});
+
+	it('should save some character method 2 multiple characters', function (done) {
+		const	text	= 'It\'s Your Jöurney We Guide You Through!',
+			expected	= 'Its-Your-Jöurney-We-Guide-You-Through!';
+
+		assert.strictEqual(slug(text, {'save': ['ö', '!']}), expected);
+		done();
+	});
+
 	it('should save the dot character', function (done) {
 		const	text	= 'It\'s Your Jöurney We Guide You Through.',
 			expected	= 'Its-Your-Journey-We-Guide-You-Through.',
