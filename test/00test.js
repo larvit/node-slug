@@ -154,6 +154,18 @@ describe('slug', function () {
 		done();
 	});
 
+	it('should replace slovakian chars', function (done) {
+		const	charmap = {
+			'ľ':'l', 'Ľ':'L',
+		};
+
+		for (const char of Object.keys(charmap)) {
+			assert.strictEqual(slug('foo ' + char + ' bar baz'), 'foo-' + charmap[char] + '-bar-baz');
+		}
+
+		done();
+	});
+
 	it('should replace polish chars', function (done) {
 		const	charmap = {
 			'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n',
@@ -200,6 +212,22 @@ describe('slug', function () {
 			'ơ': 'o', 'ờ': 'o', 'ớ': 'o', 'ợ': 'o', 'ở': 'o', 'ỡ': 'o', 'ụ': 'u', 'ủ': 'u',
 			'ũ': 'u', 'ư': 'u', 'ừ': 'u', 'ứ': 'u', 'ự': 'u', 'ử': 'u', 'ữ': 'u', 'ỳ': 'y',
 			'ỵ': 'y', 'ỷ': 'y', 'ỹ': 'y', 'đ': 'd'
+		};
+
+		for (const char of Object.keys(charmap)) {
+			assert.strictEqual(slug('foo ' + char + ' bar baz'), 'foo-' + charmap[char] + '-bar-baz');
+		}
+
+		done();
+	});
+
+	it('should replace georgian chars', function (done) {
+		const	charmap = {
+			'ა': 'a', 'ბ': 'b', 'გ': 'g', 'დ': 'd', 'ე': 'e', 'ვ': 'v', 'ზ': 'z',
+			'თ': 't', 'ი': 'i', 'კ': 'k', 'ლ': 'l', 'მ': 'm', 'ნ': 'n', 'ო': 'o',
+			'პ': 'p', 'ჟ': 'zh', 'რ': 'r', 'ს': 's', 'ტ': 't', 'უ': 'u', 'ფ': 'f',
+			'ქ': 'q', 'ღ': 'gh', 'ყ': 'k', 'შ': 'sh', 'ჩ': 'ch', 'ც': 'ts', 'ძ': 'dz',
+			'წ': 'ts', 'ჭ': 'ch', 'ხ': 'kh', 'ჯ': 'j', 'ჰ': 'h',
 		};
 
 		for (const char of Object.keys(charmap)) {
