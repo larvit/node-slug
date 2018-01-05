@@ -25,6 +25,11 @@ describe('slug', function () {
 		done();
 	});
 
+	it('should remove trailing separator if any', function (done) {
+		assert.strictEqual(slug(' foo bar baz-'),	'foo-bar-baz');
+		done();
+	});
+
 	it('should remove not allowed chars', function (done) {
 		assert.strictEqual(slug('foo, bar baz'),	'foo-bar-baz');
 		assert.strictEqual(slug('foo- bar baz'),	'foo-bar-baz');
