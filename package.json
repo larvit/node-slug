@@ -12,6 +12,9 @@
     "url": "https://github.com/larvit/larvitslugify/issues"
   },
   "main": "index.js",
+  "browser": {
+    "unicode/category/So": false
+  },
   "keywords": [
     "slugify",
     "slug",
