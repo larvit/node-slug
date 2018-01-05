@@ -39,7 +39,7 @@ exports = module.exports = function slugify(str, options) {
 		}
 	}
 
-	// Set whitespace characters that is no in the charmap
+	// Set whitespace characters that is not in the charmap
 	// We do this since we'd like to handle explicit whitecharacters separately
 	// from the charmap further down
 	for (let i = 0; options.whitespaces[i] !== undefined; i ++) {
@@ -82,7 +82,7 @@ exports = module.exports = function slugify(str, options) {
 		}
 	}
 
-	str = str.join('');
+	str	= str.join('');
 
 	return str;
 };

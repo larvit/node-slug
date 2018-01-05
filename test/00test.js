@@ -25,6 +25,14 @@ describe('slug', function () {
 		done();
 	});
 
+	it('should trim leading / trailing separators', function (done) {
+		const	text	= '--words go here--',
+			expected	= 'words-go-here';
+
+		assert.strictEqual(slug(text),	expected);
+		done();
+	});
+
 	it('should remove trailing separator if any', function (done) {
 		assert.strictEqual(slug(' foo bar baz-'),	'foo-bar-baz');
 		done();
