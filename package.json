@@ -1,7 +1,7 @@
 {
   "name": "larvitslugify",
   "description": "Slugify string to make them url safe and more",
-  "version": "0.11.3",
+  "version": "0.11.4",
   "homepage": "https://github.com/larvit/larvitslugify",
   "author": "Lilleman <lilleman@larvit.se>",
   "repository": {
@@ -25,7 +25,7 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "^4.1.0",
+    "mocha": "^5.2.0",
     "mocha-eslint": "^4.1.0"
   },
   "license": "ISC"
