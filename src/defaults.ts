@@ -1,102 +1,12 @@
-'use strict';
-
-exports = module.exports = function slugify(str, options) {
-	let whitespaces = [];
-	let charmap = {};
-	let prevWS = false;
-
-	if (typeof options === 'string') {
-		options = {whitespaceReplaceChar: options};
-	}
-
-	if (!options) options = {};
-	if (options.charmap === undefined) options.charmap = exports.charmap;
-	if (options.multiCharmap === undefined) options.multiCharmap = exports.multiCharmap;
-	if (options.removeMultipleWhitespace === undefined) options.removeMultipleWhitespace = true;
-	if (options.trim === undefined) options.trim = true;
-	if (options.unidentifiedReplaceChar === undefined) options.unidentifiedReplaceChar = exports.unidentifiedReplaceChar;
-	if (options.whitespaceReplaceChar === undefined) options.whitespaceReplaceChar = exports.whitespaceReplaceChar;
-	if (options.whitespaces === undefined) options.whitespaces = exports.whitespaces;
-
-	// Copy the charmap object so we do not screw up the original one
-	Object.assign(charmap, options.charmap);
-
-	// Make sure the string is actually a string
-	str = String(str);
-
-	if (options.trim === true) {
-		str = str.trim();
-	}
-
-	// Shorthand for saving characters
-	if (options.save) {
-		if (!Array.isArray(options.save)) {
-			options.save = [options.save];
-		}
-
-		for (let i = 0; options.save[i] !== undefined; i++) {
-			charmap[options.save[i]] = options.save[i];
-		}
-	}
-
-	// Set whitespace characters that is not in the charmap
-	// We do this since we'd like to handle explicit whitecharacters separately
-	// from the charmap further down
-	for (let i = 0; options.whitespaces[i] !== undefined; i++) {
-		const whitespace = options.whitespaces[i];
-
-		if (charmap[whitespace] === undefined) {
-			whitespaces.push(whitespace);
-		}
-	}
-
-	// Start with replacing multichars
-	for (const searchChar of Object.keys(options.multiCharmap)) {
-		str = str.split(searchChar).join(options.multiCharmap[searchChar]);
-	}
-
-	// Then replace all single characteres
-	str = str.split('');
-	for (let i = 0; str[i] !== undefined; i++) {
-		const thisStr = str[i];
-
-		// Whitespace found!
-		if (whitespaces.indexOf(thisStr) !== -1) {
-			if (prevWS === true && options.removeMultipleWhitespace === true) {
-				str[i] = '';
-			} else {
-				str[i] = options.whitespaceReplaceChar;
-			}
-			prevWS = true;
-
-		// No whitespace found
-		} else {
-			str[i] = charmap[thisStr] || options.unidentifiedReplaceChar;
-
-			// If the previous character was a whitespace and the current should be ignored, set prevWS to true again
-			if (prevWS === true && charmap[thisStr] === undefined && options.unidentifiedReplaceChar === '') {
-				prevWS = true;
-			} else {
-				prevWS = false;
-			}
-		}
-	}
-
-	str = str.join('');
-
-	return str;
-};
-
-exports.unidentifiedReplaceChar = '';
-exports.whitespaceReplaceChar = '-';
-
-exports.whitespaces = [' ', '\t', '\xa0']; // Last being a non breaking whitespace
+export const unidentifiedReplaceChar = '';
+export const whitespaceReplaceChar = '-';
+export const whitespaces = [' ', '\t', '\xa0']; // Last being a non breaking whitespace
 
 // Taken from https://github.com/dodo/node-slug/blob/master/slug.js
-exports.multiCharmap = {'<3': 'love', '&&': 'and', '||': 'or', 'w/': 'with'};
+export const multiCharmap: Record<string, string> = { '<3': 'love', '&&': 'and', '||': 'or', 'w/': 'with' };
 
 // Taken from https://github.com/dodo/node-slug/blob/master/slug.js
-exports.charmap = {
+export const charmap: Record<string, string> = {
 	// ASCII alphabet and numbers
 	0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6',
 	7: '7', 8: '8', 9: '9',
@@ -217,5 +127,5 @@ exports.charmap = {
 	'☃': 'snowman',
 	'✈': 'airplane',
 	'✉': 'envelope',
-	'✊': 'raised-fist'
+	'✊': 'raised-fist',
 };

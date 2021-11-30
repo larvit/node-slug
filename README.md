@@ -15,32 +15,31 @@ npm install larvitslugify
 ## Examples
 
 ```javascript
-const slug = require('larvitslugify');
+const { slugify, defaultCharmap } = require('larvitslugify');
 
-slug('i ♥ unicode'); // > i-love-unicode
-slug('unicode ♥ is ☢'); // > unicode-love-is-radioactive
+slugify('i ♥ unicode'); // > i-love-unicode
+slugify('unicode ♥ is ☢'); // > unicode-love-is-radioactive
 
 // If you prefer something else then `-` as seperator
-slug('i ♥ unicode', '_'); // > i_love_unicode
+slugify('i ♥ unicode', '_'); // > i_love_unicode
 
-// Change default charmap or use option {charmap:{…}} as 2. argument
-slug.charmap['♥'] = 'freaking love'
-slug('I ♥ UNICODE')); // > I-freaking-love-UNICODE
+// Change default charmap by passing charmap option as argument
+slugify('I ♥ UNICODE', { charmap: { ...defaultCharmap, '♥': 'freaking love' } })); // > I-freaking-love-UNICODE
 
-slug('i <3 unicode'); // > i-love-unicode
+slugify('i <3 unicode'); // > i-love-unicode
 ```
 
 ## Options
 
 ```javascript
 // Options is either object or whitespaceReplaceChar (sets options.whitespaceReplaceChar)
-slug('string', [{options} || 'whitespaceReplaceChar']);
+slugify('string', [{options} || 'whitespaceReplaceChar']);
 ```
 
 ### All options
 
 ```javascript
-slug('string', {
+slugify('string', {
 	'whitespaceReplaceChar': '-', // Replace spaces with replacement
 	'charmap': {'Å': 'A', 'Ö': 'O' ... }, // A complete replacement of the charmap. All characters not in the map will be replaced by the unidentifiedReplaceChar
 	'multiCharmap': = {'<3': 'love', '||': 'and'}, // These will be matched before the single chars, also a complete replacement
@@ -53,3 +52,7 @@ slug('string', {
  //'wordLimit': 5 // Limits the amount of words to this number (Currently not supported)
 });
 ```
+
+## Changelog
+### 1.2.0
+* Rewrote in TypeScript.

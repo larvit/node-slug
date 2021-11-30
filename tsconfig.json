@@ -1,0 +1,26 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"allowJs": false,
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true,
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"outDir": "./dist",
+		"preserveSymlinks": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "es2020"
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"ts-node": {
+		"files": true
+	}
+}
