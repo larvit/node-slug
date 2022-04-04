@@ -1,0 +1,14 @@
+name: larvitslugify CI
+
+on: [push]
+
+jobs:
+  test:
+    uses: larvit/standards/.github/workflows/test.yml@master
+
+  publish:
+    if: github.ref == 'refs/heads/master'
+    needs: test
+    uses: larvit/standards/.github/workflows/publish.yml@master
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

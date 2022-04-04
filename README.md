@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/larvit/larvitslugify.svg?branch=master)](https://travis-ci.org/larvit/larvitslugify)
+[![Build Status](https://github.com/larvitslugify/larvitdb/actions/workflows/ci.yml/badge.svg)](https://github.com/larvit/larvitslugify/actions)
 
 # [larvitslugify](https://github.com/larvit/larvitslugify)
 
